@@ -1,4 +1,4 @@
-"""Welcome screen component version 3. Made by Samuel Burgess"""
+"""Welcome screen component version 3. Made it into a function Made by Samuel Burgess"""
 
 
 def welcome():
