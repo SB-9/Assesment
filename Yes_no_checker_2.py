@@ -8,10 +8,10 @@ show_instructions = input("Have you played this quiz before?: ")
 while show_instructions.lower() != "y" and show_instructions.lower() != "n":
     show_instructions = input("Please enter y or n: ")
 
-# check for yes
-if show_instructions.lower() == "y":
-    print("continue program")
-
-# otherwise show instructions
-else:
+# otherwise, show instructions
+if show_instructions.lower() != "y":
     print("instructions")
+
+# check for yes
+else:
+    print("continue program")
