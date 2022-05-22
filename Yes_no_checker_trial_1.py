@@ -1,4 +1,4 @@
-"""Maori quiz yes no checker version 1"""
+"""Maori quiz yes no checker trial 1"""
 
 
 # ask if user has tried this quiz before
