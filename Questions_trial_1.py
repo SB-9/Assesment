@@ -1,4 +1,4 @@
-"""First trial of the scoring component for Maori quiz, made by Samuel Burgess"""
+"""First trial of the question component for Maori quiz, made by Samuel Burgess"""
 
 answers = ["tahi", "rua", "toru", "wha", "rima", "ono", "whitu", "waru", "iwa", "tekau"]
 questions = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
