@@ -9,5 +9,23 @@ def welcome():
     print(f"Welcome {name}, I hope you have a fun time playing my Quiz!")
 
 
+def yes_no(question):
+    # ask if user has played the quiz before
+    answer = input(question)
+
+    # check for unexpected inputs
+    while answer.lower() != "y" and answer.lower() != "n":
+        answer = input("Please enter y or n: ")
+
+    # check for yes
+    if answer.lower() == "y":
+        return "Yes"
+
+    # otherwise, show instructions
+    else:
+        return "No"
+
+
 # Main routine
 welcome()
+show_instructions = yes_no("Have you played this quiz before")
