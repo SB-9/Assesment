@@ -27,8 +27,8 @@ def question():
 # Setup variables
 playing = "l"
 
-# Man routine go here
+# Main routine go here
 while playing.lower() != "x":
     question()
-    playing = input("Do you want to play again? (x to quit any other key to play again):  ")
+    playing = input("Do you want to play again? ( 'x' to quit any other key to play again ):  ")
 
