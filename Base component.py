@@ -1,6 +1,7 @@
 """Base component for Maori quiz made by Samuel Burgess. Created on 9th March 2022."""
 
 
+# Functions go here
 def welcome():
     print("Welcome to my Maori quiz!")
     name = input("What is your name?: ")
@@ -48,7 +49,21 @@ def questions():
         round_ += 1
 
 
+def loop():
+    # Setup variables
+    playing = "l"
+
+    # Question loop
+    while playing.lower() != "x":
+        questions()
+        playing = input("Do you want to play again? ( 'x' to quit any other key to play again ):  ")
+
+
 # Main routine
 welcome()
 show_instructions = yes_no("Have you played this quiz before?: ")
-questions()
+if show_instructions == "Yes":
+    print("Continue")
+else:
+    print("Instructions")
+loop()
