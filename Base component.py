@@ -43,7 +43,8 @@ def questions():
     questions_ = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
     # Setup round counter
     round_ = 0
-
+    # setup score
+    score = 0
     # Loop until ten questions are done
     for item in answers:
         # get user input
@@ -51,11 +52,13 @@ def questions():
         # if correct tell the user
         if user_answer.lower() == answers[round_]:
             print(formatter("correct", "!"))
+            score += 1
         # else tell the user incorrect
         else:
             print(formatter("incorrect", "-"))
         # add one to the round counter
         round_ += 1
+    return score
 
 
 def loop():
@@ -64,8 +67,16 @@ def loop():
 
     # Question loop
     while playing.lower() != "x":
-        questions()
+        scoring()
         playing = input("Do you want to play again? ( 'x' to quit any other key to play again ):  ")
+
+
+def scoring():
+    score_ = questions()
+    if score_ > 5:
+        print(formatter(f"congratulations, you got {score_} questions correct", "!"))
+    else:
+        print(formatter(f"you got {score_} questions correct", "-"))
 
 
 def instructions():
@@ -95,3 +106,4 @@ def instructions():
 welcome()
 instructions()
 loop()
+print(formatter("Thanks for playing", "!"))

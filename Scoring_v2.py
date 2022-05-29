@@ -1,4 +1,4 @@
-"""scoring component version 1 for Maori quiz made by Samuel Burgess"""
+"""scoring component version 2 for Maori quiz made by Samuel Burgess"""
 
 
 # functions go here
@@ -48,7 +48,6 @@ def questions():
         # else tell the user incorrect
         else:
             print(formatter("incorrect", "-"))
-            score -= 1
         # add one to the round counter
         round_ += 1
     return score
@@ -65,5 +64,8 @@ def loop():
 
 
 # main routine goes here
-if questions() == 10:
-    print("10 out of 10")
+score_ = questions()
+if score_ > 5:
+    print(formatter(f"congratulations, you got {score_} questions correct", "!"))
+else:
+    print(formatter(f"you got {score_} questions correct", "-"))
