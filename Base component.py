@@ -3,20 +3,20 @@
 
 # Functions go here
 def welcome():
-    print(formatter("Welcome to my Maori quiz!", "*"))
-    name = input("What is your name?: ")
-    while len(name) <= 1:
-        name = input("please enter a name longer than 1 character: ")
-    print(formatter(f"Welcome {name}, I hope you have a fun time playing my Quiz!", "*"))
+    print(formatter("Welcome to my Maori quiz!", "*"))  # welcome message
+    name = input("What is your name?: ")  # ask for user's name
+    while len(name) <= 1:  # check for invalid inputs
+        name = input("please enter a name longer than 1 character: ")  # ask for another input
+    print(formatter(f"Welcome {name}, I hope you have a fun time playing my Quiz!", "*"))  # welcome the user
 
 
 def formatter(text, symbol):
-    sides = symbol * 3
+    sides = symbol * 3  # setup sides
 
-    formatted_text = f"{sides} {text} {sides}"
+    formatted_text = f"{sides} {text} {sides}"  # format text variable
     top_bottom = symbol * len(formatted_text)
 
-    return f"{top_bottom}\n{formatted_text}\n{top_bottom}"
+    return f"{top_bottom}\n{formatted_text}\n{top_bottom}"  # return formatted text
 
 
 def yes_no(question):
@@ -72,19 +72,19 @@ def loop():
 
 
 def scoring():
-    score_ = questions()
-    if score_ > 5:
+    score_ = questions()  # setup score variable
+    if score_ > 5:  # check if user has a score over 5
         print(formatter(f"congratulations, you got {score_} questions correct", "!"))
     else:
         print(formatter(f"you got {score_} questions correct", "-"))
 
 
 def instructions():
-    show_instructions = yes_no("Have you played this quiz before?: ")
+    show_instructions = yes_no("Have you played this quiz before?: ")  # ask user if they need instructions
     if show_instructions == "Yes":
-        print(formatter("I hope you enjoy playing again!", "!"))
+        print(formatter("I hope you enjoy playing again!", "!"))  # welcome user who doesn't need instructions
     else:
-        print(formatter("Welcome to my Maori quiz!", "*"))
+        print(formatter("Welcome to my Maori quiz!", "*"))  # instructions
         print("In this quiz, you will be asked ten questions.")
         print("once the question has been asked, the program will wait for your answer")
         print()
@@ -103,7 +103,7 @@ def instructions():
 
 
 # Main routine
-welcome()
-instructions()
-loop()
-print(formatter("Thanks for playing", "!"))
+welcome()  # welcome user
+instructions()  # instructions
+loop()  # question loop
+print(formatter("Thanks for playing", "!"))  # thank user for playing
