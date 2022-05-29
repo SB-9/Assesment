@@ -68,11 +68,30 @@ def loop():
         playing = input("Do you want to play again? ( 'x' to quit any other key to play again ):  ")
 
 
+def instructions():
+    show_instructions = yes_no("Have you played this quiz before?: ")
+    if show_instructions == "Yes":
+        print(formatter("I hope you enjoy playing again!", "!"))
+    else:
+        print(formatter("Welcome to my Maori quiz!", "*"))
+        print("In this quiz, you will be asked ten questions.")
+        print("once the question has been asked, the program will wait for your answer")
+        print()
+        print("enter your answer without accents")
+        print()
+        print("you will then be told if you got the question correct or not")
+        print("and you will be asked the next question")
+        print()
+        print("at the end of ten questions, you will be told your score")
+        print()
+        print("you will then be asked if you want to play again")
+        print("at that point, if you enter 'x' the program will end")
+        print("but if you enter anything else you can play again for a better score")
+        print(formatter("enjoy", "!"))
+        print("scroll up for instructions")
+
+
 # Main routine
 welcome()
-show_instructions = yes_no("Have you played this quiz before?: ")
-if show_instructions == "Yes":
-    print("Continue")
-else:
-    print("Instructions")
+instructions()
 loop()
