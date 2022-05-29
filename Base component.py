@@ -3,11 +3,20 @@
 
 # Functions go here
 def welcome():
-    print("Welcome to my Maori quiz!")
+    print(formatter("Welcome to my Maori quiz!", "*"))
     name = input("What is your name?: ")
     while len(name) <= 1:
         name = input("please enter a name longer than 1 character: ")
-    print(f"Welcome {name}, I hope you have a fun time playing my Quiz!")
+    print(formatter(f"Welcome {name}, I hope you have a fun time playing my Quiz!", "*"))
+
+
+def formatter(text, symbol):
+    sides = symbol * 3
+
+    formatted_text = f"{sides} {text} {sides}"
+    top_bottom = symbol * len(formatted_text)
+
+    return f"{top_bottom}\n{formatted_text}\n{top_bottom}"
 
 
 def yes_no(question):
@@ -31,20 +40,20 @@ def questions():
     # Setup answers
     answers = ["tahi", "rua", "toru", "wha", "rima", "ono", "whitu", "waru", "iwa", "tekau"]
     # Setup question numbers
-    questions = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
+    questions_ = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
     # Setup round counter
     round_ = 0
 
     # Loop until ten questions are done
     for item in answers:
         # get user input
-        user_answer = input(f"what is the Maori name for the number {questions[round_]}?: ")
+        user_answer = input(f"what is the Maori name for the number {questions_[round_]}?: ")
         # if correct tell the user
         if user_answer.lower() == answers[round_]:
-            print("correct")
+            print(formatter("correct", "!"))
         # else tell the user incorrect
         else:
-            print("incorrect")
+            print(formatter("incorrect", "-"))
         # add one to the round counter
         round_ += 1
 
